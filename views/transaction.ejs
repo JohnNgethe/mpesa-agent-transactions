@@ -1,0 +1,49 @@
+<%- include('partials/header') %>
+
+<div class="container mt-5">
+  <h1>Record Transaction</h1>
+  <form action="/transaction" method="POST">
+    <div class="form-group">
+      <label for="transactionCode">Transaction Code:</label>
+      <input type="text" class="form-control" id="transactionCode" name="transactionCode" required>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="nationalID">National ID:</label>
+      <input type="text" class="form-control" id="nationalID" name="nationalID" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phoneNumber">Phone Number:</label>
+      <input type="text" class="form-control" id="phoneNumber" name="phoneNumber" required>
+    </div>
+
+    <div class="form-group">
+      <label for="transactionType">Transaction Type:</label>
+      <select class="form-control" id="transactionType" name="transactionType" required>
+        <option value="withdrawal">Withdrawal</option>
+        <option value="deposit">Deposit</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+  <hr>
+<h2>Download Transactions</h2>
+  <form action="/download" method="GET">
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" name="startDate" required>
+
+    <label for="endDate">End Date:</label>
+    <input type="date" id="endDate" name="endDate" required>
+
+    <button type="submit" class="btn btn-primary">Download</button>
+  </form>
+</div>
+<%- include('partials/footer') %>
